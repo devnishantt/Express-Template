@@ -4,7 +4,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon src/index.js"
+    "create": "npx sequelize db:create",
+    "drop": "npx sequelize db:drop",
+    "migrate": "npx sequelize db:migrate",
+    "migrate:undo": "npx sequelize db:migrate:undo",
+    "migrate:undo:all": "npx sequelize db:migrate:undo:all",
+    "seed": "npx sequelize db:seed:all",
+    "seed:undo": "npx sequelize db:seed:undo:all",
+    "setup": "npm run db:create && npm run db:migrate && npm run db:seed",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
